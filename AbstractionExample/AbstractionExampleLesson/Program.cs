@@ -1,12 +1,18 @@
 ﻿using System;
 
-namespace AbstractionExampleLesson
+
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+
+        Customer cust = new Customer("Ellie", "Good");
+
+        //Console.WriteLine(cust.FirstName + " " + cust.LastName);
+
+        cust.Print();
+
     }
 }
+
