@@ -4,32 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-    public class Customer
+public class Customer : Person
+{
+
+    private string _deliveryAddress;
+    public string DeliveryAddress { get => _deliveryAddress; set => _deliveryAddress = value; }
+
+    public Customer(string FName, string LName, string DAdress) : base(LName, FName)
     {
-    
-        private string _firstName;
-        private string _lastName;
-    
-    
-    public Customer(string FName, string LName) 
-    {
-        FirstName = FName;
-        LastName = LName;
+        _deliveryAddress = DAdress;
     }
 
-    public string FirstName { get => _firstName; set => _firstName = value; }
-    public string LastName { get => _lastName; set => _lastName = value; }
-
-
-    public void Print() 
+    public override string Print()
     {
-        Console.WriteLine($"Full Name: {FirstName} {LastName}");
+        var res = base.Print();
+        return $"{res} from {_deliveryAddress}";
     }
-
-
-
-
-
-
 }
 
